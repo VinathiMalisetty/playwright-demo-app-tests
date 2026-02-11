@@ -1,6 +1,6 @@
 # Playwright Demo App – Data-driven test suite (TypeScript)
 
-Data-driven Playwright tests for the Demo App (Asana-style board) using TypeScript and a JSON test-data file to avoid duplication and scale easily.
+Data-driven Playwright tests for the Demo App using TypeScript and a JSON test-data file to avoid duplication and scale easily.
 
 ## Setup
 
@@ -32,7 +32,7 @@ npm test
 
 - **URL:** https://animated-gingersnap-8cf7f2.netlify.app/
 - **Username:** `admin`
-- **Password:** `password123`
+- **Password:** `******`
 
 ## Test cases (from JSON)
 
