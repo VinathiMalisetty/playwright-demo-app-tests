@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 import { login } from './fixtures/auth';
 import { verifyTaskInColumn } from './helpers/board-helpers';
 import testCasesData from '../test-data/test-cases.json';

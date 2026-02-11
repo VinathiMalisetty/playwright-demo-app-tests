@@ -14,10 +14,10 @@ export async function verifyTaskInColumn(
 ): Promise<void> {
   // Step 1: Go to the section (Web Application or Mobile Application) — they are buttons, not links
   await page.getByRole('button', { name: new RegExp(section, 'i') }).click();
-  await page.waitForLoadState('networkidle');
+  //await page.waitForLoadState('networkidle');
 
   // Step 2: Column headers in the DOM are "To Do (2)", "In Progress (1)", "Done (1)" — use partial match
-  const columnHeader = page.getByRole('heading', { level: 2 }).filter({ hasText: column });
+  const columnHeader = page.getByRole('heading').filter({ hasText: column });
   await expect(columnHeader.first()).toBeVisible({ timeout: 8000 });
 
   // Step 3: Columns are divs with class w-80 (not <section>). Task cards inside are div.bg-white.
