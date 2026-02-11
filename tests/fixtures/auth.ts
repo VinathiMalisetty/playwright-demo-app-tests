@@ -11,21 +11,13 @@ export const DEMO_APP = {
   password: 'password123',
 } as const;
 
-/**
- * Performs login on the Demo App.
- * Assumes page is already on the app (e.g. baseURL).
- */
 export async function login(page: Page): Promise<void> {
   await page.goto('/');
   await page.getByLabel(/username/i).fill(DEMO_APP.username);
   await page.getByLabel(/password/i).fill(DEMO_APP.password);
   await page.getByRole('button', { name: /sign in/i }).click();
-  await page.waitForSelector('text=Web Application', { state: 'visible', timeout: 15000 });
 }
 
-/**
- * Extended test with auto-login before each test.
- */
 export const test = baseTest.extend<{ authenticatedPage: Page }>({
   authenticatedPage: async ({ page }, use) => {
     await login(page);

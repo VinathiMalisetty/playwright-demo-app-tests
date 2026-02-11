@@ -3,11 +3,10 @@ import { login } from './fixtures/auth';
 import { verifyTaskInColumn } from './helpers/board-helpers';
 import testCasesData from '../test-data/test-cases.json';
 
-// Test data from JSON file - each test uses one entry from this array
 const testCases = testCasesData.testCases;
 
 test.describe('Demo App - Data-driven test suite', () => {
-  // Login once before every test so each test starts from the board
+
   test.beforeEach(async ({ page }) => {
     await login(page);
   });
